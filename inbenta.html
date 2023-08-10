@@ -19,5 +19,48 @@
         inbentaKey: 'BgJSZsmK6e2Mpogu3LMu6gH20sNKlKLbMdml+LUghtI='
     }
 
-    InbentaChatbotSDK.buildWithDomainCredentials(authorization);
+    InbentaChatbotSDK.buildWithDomainCredentials(authorization,
+        {
+            lang: 'en',
+            answers: {
+                answerAttributes: ['ANSWER_TEXT'],
+                sideBubbleAttributes: ['SIDEBUBBLE_TEXT'],
+                maxRelatedContents: 3,
+            },
+            proactiveWelcome: true,
+            delayOnAnswer: 700,
+            usertype: 0,
+            environment: "development",
+            launcher: {
+                title: "InbentaBotSDK"
+            },
+            labels: {
+                en: {
+                    'yes': 'Sure',
+                    'no': 'Nope',
+                    'generic-error-message': 'Please try to answer again',
+                    'enter-question': 'Ask here',
+                    'interface-title': 'SDK Demo vIC',
+                    'guest-name': 'You',
+                    'help-question': 'What can I help you with?',
+                    'thanks': 'Thank you!',
+                    'rate-content': 'Did it help?',
+                    'form-message': 'Please tell us why',
+                    'submit': 'Send'
+                }
+            },
+            ratingOptions: [
+                {
+                    id: 1,
+                    label: 'yes',
+                    comment: false
+                },
+                {
+                    id: 2,
+                    label: 'no',
+                    comment: true
+                }
+            ],
+        }
+    );
 </script>
